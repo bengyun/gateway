@@ -1,0 +1,63 @@
+{
+    "status": "success",
+    "snCode": "1DG3G4",
+    "msgType": "2",
+    "msg": [
+        {
+            "monitorCode": "0x05D1",
+            "monitorName": "液位高度",
+            "monitorData": "79.8",
+            "dataUnit": "cm",
+            "monitorTime": "2019-07-06 06:35:04"
+        },
+        {
+            "monitorCode": "0x0501",
+            "monitorName": "设备实时电压",
+            "monitorData": "7.32",
+            "dataUnit": "V",
+            "monitorTime": "2019-07-06 06:35:04"
+        },
+        {
+            "monitorCode": "0x05D1",
+            "monitorName": "液位高度",
+            "monitorData": "80.0",
+            "dataUnit": "cm",
+            "monitorTime": "2019-07-06 06:50:04"
+        },
+        {
+            "monitorCode": "0x0501",
+            "monitorName": "设备实时电压",
+            "monitorData": "7.32",
+            "dataUnit": "V",
+            "monitorTime": "2019-07-06 06:50:04"
+        },
+        {
+            "monitorCode": "0x05D1",
+            "monitorName": "液位高度",
+            "monitorData": "77.7",
+            "dataUnit": "cm",
+            "monitorTime": "2019-07-06 07:05:04"
+        },
+        {
+            "monitorCode": "0x0501",
+            "monitorName": "设备实时电压",
+            "monitorData": "7.32",
+            "dataUnit": "V",
+            "monitorTime": "2019-07-06 07:05:04"
+        },
+        {
+            "monitorCode": "0x05D1",
+            "monitorName": "液位高度",
+            "monitorData": "76.9",
+            "dataUnit": "cm",
+            "monitorTime": "2019-07-06 07:20:14"
+        },
+        {
+            "monitorCode": "0x0501",
+            "monitorName": "设备实时电压",
+            "monitorData": "7.28",
+            "dataUnit": "V",
+            "monitorTime": "2019-07-06 07:20:14"
+        }
+    ]
+}
