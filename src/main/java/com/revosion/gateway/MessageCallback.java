@@ -5,11 +5,15 @@ import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import java.util.List;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.starwsn.protocol.core.Starwsn;
 
 public class MessageCallback  implements MqttCallback{
 	private Logger log = Logger.getLogger(MessageCallback.class);
-	MqttServices mqttService;
+	private MqttServices mqttService;
 
 	public MessageCallback(MqttServices mqttService) {
 		this.mqttService = mqttService;
@@ -47,16 +51,24 @@ public class MessageCallback  implements MqttCallback{
 
 	public void messageArrived(String topic, MqttMessage message) {
 		try {
-			System.out.println("topic:=====" + topic);
+			//System.out.println("topic:=====" + topic);
 			String[] topics = topic.split("/");
 			if("set_para".equals(topics[2])){
 				return;
 			}
 			// 消息体
 			byte[] payLoadArray = message.getPayload();
-			System.out.println("payLoadArray：=====" + bytesToHexString(payLoadArray));
+			//System.out.println("payLoadArray：=====" + bytesToHexString(payLoadArray));
 			String jsonStr = Starwsn.messageResolve(topic, payLoadArray);
 			System.out.println(JsonFormatUtil.formatJson(jsonStr));
+			ObjectMapper mapper = new ObjectMapper();
+			JsonNode jsonNode = mapper.readTree(jsonStr);
+			System.out.println(jsonNode.get("msgType"));
+
+			if (jsonNode.get("msgType").asInt() == 2) {
+				List<SenML> data = JsonToSenML.toSenML(jsonNode.get("msg"));
+				this.mqttService.addQueue(data);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,5 +1,9 @@
 package com.revosion.gateway;
 
+import java.util.List;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 import org.apache.log4j.Logger;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -22,6 +26,7 @@ public class MqttServices {
 	private static int keepAliveInterval = 20; // 会话心跳时间
 	private static String clientId = "starwsn-mqtt-test-295224018"; // 客户端ID
 	private static MqttClient client; // 客户端对象
+	private BlockingQueue<List<SenML>> queue = new LinkedBlockingQueue<List<SenML>>();
 
 	public MqttServices(String host, String userName, String passWord) {
 		this.host = host;
@@ -180,7 +185,7 @@ public class MqttServices {
 	 * @param payload  消息内容
 	 * @return
 	 */
-	public boolean publish(String topicName,byte[] payload){
+	public boolean publish(String topicName, byte[] payload) {
 		try {
 			MqttTopic topic = client.getTopic(topicName);
 			MqttMessage message = new MqttMessage();
@@ -190,11 +195,19 @@ public class MqttServices {
 			MqttDeliveryToken token = topic.publish(message);
 			logger.info("mqtt消息发送结果等待。。。。。");
 			token.waitForCompletion();
-			logger.info("mqtt消息发送结果："+token.isComplete());
+			logger.info("mqtt消息发送结果：" + token.isComplete());
 			return token.isComplete();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
+	}
+
+	public void addQueue(List<SenML> data) {
+		this.queue.add(data);
+	}
+
+	public List<SenML> getQueue() throws InterruptedException {
+		return this.queue.take();
 	}
 }

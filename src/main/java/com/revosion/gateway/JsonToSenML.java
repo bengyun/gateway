@@ -15,15 +15,18 @@ public class JsonToSenML {
         if (jsonNode.isArray()) {
             for (final JsonNode objNode : jsonNode) {
                 SenML senML = new SenML();
-                senML.setName(objNode.get("monitorName").textValue());
+                senML.setName(objNode.get("monitorName").textValue().replace("液位高度", "WaterLevel").replace("设备实时电压",
+                        "BatteryVoltage"));
                 senML.setUnit(objNode.get("dataUnit").textValue());
                 senML.setValue(objNode.get("monitorData").asDouble());
                 try {
-                senML.setTime(formatter.parse(objNode.get("monitorTime").textValue()).getTime());
+                    senML.setTime(formatter.parse(objNode.get("monitorTime").textValue()).getTime());
                 } catch (ParseException e) {
-                    
+
                 }
                 list.add(senML);
+                list.get(0).setBaseName("test");
+                list.get(0).setBaseUnit("cm");
             }
         }
         return list;
