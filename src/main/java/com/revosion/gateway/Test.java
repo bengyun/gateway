@@ -11,7 +11,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		MqttConfig aMqttConfig = new MqttConfig();
+		Config aMqttConfig = new Config();
 		
 		// 构建MQTT连接
 		MqttServices mqttService = new MqttServices(aMqttConfig.StarwsnHost(), aMqttConfig.StarwsnUserName(), aMqttConfig.StarwsnPassWord());
@@ -22,7 +22,7 @@ public class Test {
 			mqttService.subScription(aMqttConfig.StarwsnTopics(), aMqttConfig.StarwsnQos());
 		}
 
-		MqttServices ms = new MqttServices(aMqttConfig.CnPumpHost(), aMqttConfig.CnPumpThingId(), aMqttConfig.CnPumpThingKey());
+		MqttServices ms = new MqttServices(aMqttConfig.BengyunHost(), aMqttConfig.ThingId(), aMqttConfig.ThingKey());
 		boolean cb1 = ms.connect(true);
 
 		ObjectMapper mapper = new ObjectMapper();
@@ -33,7 +33,7 @@ public class Test {
 				List<SenML> data = mqttService.getQueue();
 				byte[] message = mapper.writeValueAsBytes(data);
 				System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(data));
-				ms.publish("channels/" + aMqttConfig.CnPumpChannelId() + "/messages", message);
+				ms.publish("channels/" + aMqttConfig.BengyunChannelId() + "/messages", message);
 			} catch (JsonProcessingException e) {
 
 			} catch (InterruptedException e) {
