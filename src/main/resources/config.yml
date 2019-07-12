@@ -1,0 +1,77 @@
+mqtt_starwsn_host: tcp://120.77.155.222:1883
+mqtt_starwsn_username: admin
+mqtt_starwsn_password: password
+
+mqtt_bengyun_host: tcp://localhost:1883
+mqtt_bengyun_channel_id: f8a79e69-75f8-4b6d-bc0c-52c3fa0f587a
+things:
+  -1CD34D:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/1CD34D/#
+    mqtt_qos: 1
+  -1DG3G4:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/1DG3G4/#
+    mqtt_qos: 1
+  -64BW9M:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/64BW9M/#
+    mqtt_qos: 1
+  -JSU127:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/JSU127/#
+    mqtt_qos: 1
+  -E69UH4:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/E69UH4/#
+    mqtt_qos: 1
+  -T9G9L6:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/T9G9L6/#
+    mqtt_qos: 1
+  -W871YD:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/W871YD/#
+    mqtt_qos: 1
+  -FP735S:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/FP735S/#
+    mqtt_qos: 1
+  -11N1WS:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/11N1WS/#
+    mqtt_qos: 1
+  -U40UT5:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/U40UT5/#
+    mqtt_qos: 1
+  -V2C49C:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/V2C49C/#
+    mqtt_qos: 1
+  -51Q1YX:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/51Q1YX/#
+    mqtt_qos: 1
+  -B8M8X3:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/B8M8X3/#
+    mqtt_qos: 1
+  -5F98PW:
+    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
+    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
+    mqtt_topic: ND/5F98PW/#
+    mqtt_qos: 1
