@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import org.apache.log4j.Logger;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -26,7 +28,7 @@ public class MqttServices {
 	private static int keepAliveInterval = 20; // 会话心跳时间
 	private static String clientId = "starwsn-mqtt-test-295224018"; // 客户端ID
 	private static MqttClient client; // 客户端对象
-	private BlockingQueue<List<SenML>> queue = new LinkedBlockingQueue<List<SenML>>();
+	private BlockingQueue<JsonNode> queue = new LinkedBlockingQueue<JsonNode>();
 
 	public MqttServices(String host, String userName, String passWord) {
 		this.host = host;
@@ -203,11 +205,11 @@ public class MqttServices {
 		}
 	}
 
-	public void addQueue(List<SenML> data) {
-		this.queue.add(data);
+	public void addQueue(JsonNode jsonNode) {
+		this.queue.add(jsonNode);
 	}
 
-	public List<SenML> getQueue() throws InterruptedException {
+	public JsonNode getQueue() throws InterruptedException {
 		return this.queue.take();
 	}
 }

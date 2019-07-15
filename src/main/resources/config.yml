@@ -2,91 +2,93 @@ mqtt_starwsn_host: tcp://120.77.155.222:1883
 mqtt_starwsn_username: admin
 mqtt_starwsn_password: password
 
-mqtt_bengyun_host: tcp://localhost:1883
-mqtt_bengyun_channel_id: f8a79e69-75f8-4b6d-bc0c-52c3fa0f587a
+mqtt_bengyun_host: http://47.88.225.240/http/channels/
+mqtt_bengyun_channel_id: e5b6fdf5-396a-45a4-9c2a-48aa0503e55b
+
+mqtt_starwsn_topics:
+  -
+    topic: ND/1CD34D/#
+    qos: 1
+  -
+    topic: ND/1DG3G4/#
+    qos: 1
+  -
+    topic: ND/64BW9M/#
+    qos: 1
+  -
+    topic: ND/JSU127/#
+    qos: 1
+  -
+    topic: ND/E69UH4/#
+    qos: 1
+  -
+    topic: ND/T9G9L6/#
+    qos: 1
+  -
+    topic: ND/W871YD/#
+    qos: 1
+  -
+    topic: ND/FP735S/#
+    qos: 1
+  -
+    topic: ND/11N1WS/#
+    qos: 1
+  -
+    topic: ND/U40UT5/#
+    qos: 1
+  -
+    topic: ND/V2C49C/#
+    qos: 1
+  -
+    topic: ND/51Q1YX/#
+    qos: 1
+  -
+    topic: ND/B8M8X3/#
+    qos: 1
+  -
+    topic: ND/5F98PW/#
+    qos: 1
 
 things:
-  -
-    thingname: 1CD34D
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/1CD34D/#
-    mqtt_qos: 1
-  -
-    thingname: 1DG3G4
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/1DG3G4/#
-    mqtt_qos: 1
-  -
-    thingname: 64BW9M
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/64BW9M/#
-    mqtt_qos: 1
-  -
-    thingname: JSU127
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/JSU127/#
-    mqtt_qos: 1
-  -
-    thingname: E69UH4
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/E69UH4/#
-    mqtt_qos: 1
-  -
-    thingname: T9G9L6
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/T9G9L6/#
-    mqtt_qos: 1
-  -
-    thingname: W871YD
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/W871YD/#
-    mqtt_qos: 1
-  -
-    thingname: FP735S
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/FP735S/#
-    mqtt_qos: 1
-  -
-    thingname: 11N1WS
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/11N1WS/#
-    mqtt_qos: 1
-  -
-    thingname: U40UT5
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/U40UT5/#
-    mqtt_qos: 1
-  -
-    thingname: V2C49C
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/V2C49C/#
-    mqtt_qos: 1
-  -
-    thingname: 51Q1YX
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/51Q1YX/#
-    mqtt_qos: 1
-  -
-    thingname: B8M8X3
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/B8M8X3/#
-    mqtt_qos: 1
-  -
-    thingname: 5F98PW
-    thingid: c69f6155-aa20-4021-bdbf-b428b2b478b1
-    thingkey: a3f3342c-7575-447d-bfa9-884fa44d3859
-    mqtt_topic: ND/5F98PW/#
-    mqtt_qos: 1
+  1CD34D:
+    thingid: 80e06679-48a3-4612-b180-6aedab034c6b
+    thingkey: 0ffad97b-4909-4840-a696-4d6eecc2883d
+  1DG3G4:
+    thingid: 3a8e880d-b0d1-49ce-a06d-c1665766490e
+    thingkey: d6e5af05-7fe0-4e35-8c1d-8e8f06ce900c
+  64BW9M:
+    thingid: 5bf5d6d1-8556-432b-a993-d5c7a29f8127
+    thingkey: a7451416-de53-4a2b-9532-388bff123dc5
+  JSU127:
+    thingid: 2f0180db-13d9-4318-859c-2358ecce2ee0
+    thingkey: acc0c651-4d6a-463a-8a84-42fbed04dce2
+  E69UH4:
+    thingid: f6451f62-824b-4096-a1f9-68bca771cd38
+    thingkey: 87767362-cb70-4532-a90e-cc8d39405569
+  T9G9L6:
+    thingid: c32a926b-4d66-4c1a-9136-b60e5df9081e
+    thingkey: 974d8ed5-3452-4c34-a219-2f3c22b462f9
+  W871YD:
+    thingid: 7827442b-403d-4b2c-a191-c4b3b8116d2d
+    thingkey: 8e49b268-4fbc-4f75-8864-55a1d944ea37
+  FP735S:
+    thingid: aca4c3e7-7f27-4cd9-b101-20731fc81127
+    thingkey: 00ce1ba0-219e-4667-b4c7-2236a30a1885
+  11N1WS:
+    thingid: bc1c46dd-e519-4d80-898e-eee952e6b46f
+    thingkey: fc3ac385-dbe7-4927-828c-2e855679a9ff
+  U40UT5:
+    thingid: f0f04679-90dc-469b-b6a9-c688e8ae5968
+    thingkey: 26e0dc40-bfee-445d-9839-74b8f8b3d875
+  V2C49C:
+    thingid: 0dcc8df6-c141-4152-ab89-126d84f447bc
+    thingkey: 220e7f11-deb8-45a1-b8a0-625e70f88eaa
+  51Q1YX:
+    thingid: 4eb972d8-e318-4df7-9560-2153d9430c0c
+    thingkey: 4e8d0b1f-7cec-45d5-a2e5-cfdce7307bff
+  B8M8X3:
+    thingid: 6ab97e6c-c41e-4edc-bcd5-f3a5cbcad874
+    thingkey: 798028a6-d092-4833-b5d0-3577f6bda4ea
+  5F98PW:
+    thingid: e1b39f01-e3d2-4af8-90f5-cc5b8b859967
+    thingkey: aa796fe0-6379-44d2-a1fd-788caf46ee47

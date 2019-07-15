@@ -14,9 +14,9 @@ public class Config {
     private Logger log = Logger.getLogger(Config.class);
     private LinkedHashMap<String, Object> linkedHashMap = null;
     @SuppressWarnings("rawtypes")
-	private List<LinkedHashMap> things = null;
-    private String[] mqtt_topic_list = null;
-    private int[] mqtt_qos_list = null;
+    private LinkedHashMap things = null;
+    @SuppressWarnings("rawtypes")
+    private List<LinkedHashMap> starwsn_topics = null;
     private boolean loadResult = false;
     
     /* mqtt.properties */
@@ -26,13 +26,8 @@ public class Config {
         	InputStream input = this.getClass().getClassLoader().getResourceAsStream("config.yml");
             Yaml yaml = new Yaml();
             linkedHashMap = yaml.load(input);            
-            things = (List<LinkedHashMap>)(linkedHashMap.get("things"));
-            mqtt_topic_list = new String[things.size()];
-            mqtt_qos_list = new int[things.size()];
-            for(int idx = 0; idx < things.size(); idx++) {
-            	mqtt_topic_list[idx] = (String)(things.get(idx).get("mqtt_topic"));
-            	mqtt_qos_list[idx] = (int)(things.get(idx).get("mqtt_qos"));
-            }
+            things = (LinkedHashMap<String, Object>)(linkedHashMap.get("things"));
+            starwsn_topics = (List<LinkedHashMap>) (linkedHashMap.get("mqtt_starwsn_topics"));
             log.info("加载配置文件成功");
             loadResult = true;
         } catch (Exception e) {
@@ -49,11 +44,7 @@ public class Config {
         log.info("mqtt_starwsn_password=" + StarwsnPassWord());
         log.info("mqtt_bengyun_host=" + BengyunHost());
         log.info("mqtt_bengyun_channel_id=" + BengyunChannelId());
-        log.info("mqtt_topic_list=" + Arrays.asList(StarwsnTopics()));
-        int[] aQos = StarwsnQos();
-        String strQoslist = "mqtt_qos_list=[";
-        for(int idx = 0; idx < aQos.length - 1; idx++) strQoslist = strQoslist + aQos[idx] + ", ";
-        log.info(strQoslist + aQos[aQos.length - 1] + "]");
+        log.info("things=" + Things());
     }
     
     /* mqtt_starwsn_host */
@@ -73,23 +64,17 @@ public class Config {
         return loadResult == true ? (String)(linkedHashMap.get("mqtt_bengyun_host")) : null;
     }
     /* mqtt_bengyun_channel_id */
-    public String BengyunChannelId(){
-        return loadResult == true ? (String)(linkedHashMap.get("mqtt_bengyun_channel_id")) : null;
+    public String BengyunChannelId() {
+        return loadResult == true ? (String) (linkedHashMap.get("mqtt_bengyun_channel_id")) : null;
     }
-    /* mqtt_topic_list */
-    public String[] StarwsnTopics(){
-        return loadResult == true ? mqtt_topic_list : null;
+    /* things list */
+    @SuppressWarnings("rawtypes")
+    public LinkedHashMap Things() {
+        return loadResult == true ? things : null;
     }
-    /* mqtt_qos_list */
-    public int[] StarwsnQos(){
-    	return loadResult == true ? mqtt_qos_list : null;
-    }
-    /* mqtt_qos_list */
-    public String ThingId(){
-    	return loadResult == true ? (String)(things.get(0).get("thingid")) : null;
-    }
-    /* mqtt_qos_list */
-    public String ThingKey(){
-    	return loadResult == true ? (String)(things.get(0).get("thingkey")) : null;
+    /* starwsn topic list */
+    @SuppressWarnings("rawtypes")
+    public List<LinkedHashMap> StarwsnTopics() {
+        return loadResult == true ? starwsn_topics : null;
     }
 }

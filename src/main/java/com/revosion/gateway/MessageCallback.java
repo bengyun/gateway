@@ -63,11 +63,9 @@ public class MessageCallback  implements MqttCallback{
 			System.out.println(JsonFormatUtil.formatJson(jsonStr));
 			ObjectMapper mapper = new ObjectMapper();
 			JsonNode jsonNode = mapper.readTree(jsonStr);
-			System.out.println(jsonNode.get("msgType"));
 
 			if (jsonNode.get("msgType").asInt() == 2) {
-				List<SenML> data = JsonToSenML.toSenML(jsonNode.get("msg"));
-				this.mqttService.addQueue(data);
+				this.mqttService.addQueue(jsonNode);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

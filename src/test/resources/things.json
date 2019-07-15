@@ -1,0 +1,283 @@
+[
+    {
+        "type": "manhole",
+        "name": "17号井",
+        "device": "64BW9M",
+        "location": {
+            "gps": {
+                "longitude": 121.554199,
+                "latitude": 29.993477
+            },
+            "address": "浙江省宁波市镇海区汶骆西路"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 230,
+                "warning": 130,
+                "critical": 150,
+                "overflow": 150
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "16号井",
+        "device": "JSU127",
+        "location": {
+            "gps": {
+                "longitude": 121.556450,
+                "latitude": 29.993008
+            },
+            "address": "浙江省宁波市镇海区骆慈线"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 440,
+                "warning": 330,
+                "critical": 350,
+                "overflow": 330
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "15号井",
+        "device": "E69UH4",
+        "location": {
+            "gps": {
+                "longitude": 121.556107,
+                "latitude": 29.989189
+            },
+            "address": "浙江省宁波市镇海区骆慈线"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 230,
+                "warning": 150,
+                "critical": 180,
+                "overflow": 180
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "10号井",
+        "device": "W871YD",
+        "location": {
+            "gps": {
+                "longitude": 121.730957,
+                "latitude": 29.872316
+            },
+            "address": "浙江省宁波市海曙区"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 800,
+                "warning": 400,
+                "critical": 600,
+                "overflow": 600
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "11号井",
+        "device": "T9G9L6",
+        "location": {
+            "gps": {
+                "longitude": 121.464195,
+                "latitude": 29.908388
+            },
+            "address": "浙江省宁波市海曙区"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 800,
+                "warning": 400,
+                "critical": 600,
+                "overflow": 600
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "9号井",
+        "device": "FP735S",
+        "location": {
+            "gps": {
+                "longitude": 121.427399,
+                "latitude": 29.832222
+            },
+            "address": "浙江省宁波市海曙区"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 800,
+                "warning": 400,
+                "critical": 600,
+                "overflow": 600
+            }
+        }
+    }
+    ,
+    {
+        "type": "manhole",
+        "name": "8号井",
+        "device": "11N1WS",
+        "location": {
+            "gps": {
+                "longitude": 121.363014,
+                "latitude": 29.820190
+            },
+            "address": "浙江省宁波市海曙区"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 800,
+                "warning": 400,
+                "critical": 600,
+                "overflow": 600
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "7号井",
+        "device": "U40UT5",
+        "location": {
+            "gps": {
+                "longitude": 121.730957,
+                "latitude": 29.872316
+            },
+            "address": "浙江省宁波市鄞州区"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 800,
+                "warning": 400,
+                "critical": 600,
+                "overflow": 600
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "6号井",
+        "device": "V2C49C",
+        "location": {
+            "gps": {
+                "longitude": 121.505592,
+                "latitude": 29.707825
+            },
+            "address": "浙江省宁波市奉化区"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 800,
+                "warning": 400,
+                "critical": 600,
+                "overflow": 600
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "5号井",
+        "device": "51Q1YX",
+        "location": {
+            "gps": {
+                "longitude": 121.454994,
+                "latitude": 29.715855
+            },
+            "address": "浙江省宁波市奉化区"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 800,
+                "warning": 400,
+                "critical": 600,
+                "overflow": 600
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "4号井",
+        "device": "B8M8X3",
+        "location": {
+            "gps": {
+                "longitude": 121.340012,
+                "latitude": 29.836231
+            },
+            "address": "浙江省宁波市海曙区"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 800,
+                "warning": 400,
+                "critical": 600,
+                "overflow": 600
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "3号井",
+        "device": "1DG3G4",
+        "location": {
+            "gps": {
+                "longitude": 121.566811,
+                "latitude": 30.024754
+            },
+            "address": "浙江省宁波市镇海区"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 700,
+                "warning": 400,
+                "critical": 600,
+                "overflow": 700
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "2号井",
+        "device": "5F98PW",
+        "location": {
+            "gps": {
+                "longitude": 121.565666,
+                "latitude": 30.022568
+            },
+            "address": "浙江省宁波市镇海区"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 600,
+                "warning": 300,
+                "critical": 400,
+                "overflow": 580
+            }
+        }
+    },
+    {
+        "type": "manhole",
+        "name": "1号井",
+        "device": "1CD34D",
+        "location": {
+            "gps": {
+                "longitude": 121.564583,
+                "latitude": 30.025564
+            },
+            "address": "浙江省宁波市镇海区"
+        },
+        "reporting": {
+            "water_level": {
+                "depth": 800,
+                "warning": 400,
+                "critical": 600,
+                "overflow": 750
+            }
+        }
+    }
+]
