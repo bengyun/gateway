@@ -53,10 +53,10 @@ public class MqttServices {
 			options.setKeepAliveInterval(keepAliveInterval);
 			client.setCallback(new MessageCallback(this));
 			client.connect(options);
-			logger.info("mqtt服务连接成功！！！");
+			logger.info("mqtt broker connection established successfully");
 			return true;
 		} catch (Exception e) {
-			logger.info("mqtt服务连接失败！！！");
+			logger.info("mqtt broker connection failed");
 			return false;
 		}
 	}
