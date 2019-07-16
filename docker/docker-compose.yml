@@ -1,0 +1,13 @@
+version: "3"
+
+networks:
+  docker_mainflux-base-net:
+    external: true
+
+services:
+  gateway:
+    image: bengyun/gateway:latest
+    container_name: bengyun-gateway
+    restart: on-failure
+    networks:
+      - docker_mainflux-base-net

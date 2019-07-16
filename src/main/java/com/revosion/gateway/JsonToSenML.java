@@ -17,17 +17,8 @@ public class JsonToSenML {
         if (jsonNode.isArray()) {
             for (final JsonNode objNode : jsonNode) {
                 SenML senML = new SenML();
-                String name = objNode.get("monitorName").textValue();
-                String replace = "";
-                if (name == "液位高度") {
-                    replace = "WaterLevel";
-                }
-                if (name == "设备实时电压") {
-                    replace = "BatteryVoltage";
-                }
-                senML.setName(replace);
-                //senML.setName(objNode.get("monitorName").textValue().replace("液位高度", "WaterLevel ").replace("设备实时电压",
-                //        "BatteryVoltage "));
+                senML.setName(objNode.get("monitorName").textValue().replace("液位高度", "water_level").replace("设备实时电压",
+                        "battery_voltage"));
                 senML.setUnit(objNode.get("dataUnit").textValue());
                 senML.setValue(objNode.get("monitorData").asDouble());
                 try {
@@ -36,7 +27,7 @@ public class JsonToSenML {
 
                 }
                 list.add(senML);
-                list.get(0).setBaseName("test");
+                list.get(0).setBaseName("starwsn_");
                 list.get(0).setBaseUnit("cm");
             }
         }

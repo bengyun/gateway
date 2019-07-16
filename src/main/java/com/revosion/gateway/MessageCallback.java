@@ -51,16 +51,14 @@ public class MessageCallback  implements MqttCallback{
 
 	public void messageArrived(String topic, MqttMessage message) {
 		try {
-			//System.out.println("topic:=====" + topic);
 			String[] topics = topic.split("/");
 			if("set_para".equals(topics[2])){
 				return;
 			}
 			// 消息体
 			byte[] payLoadArray = message.getPayload();
-			//System.out.println("payLoadArray：=====" + bytesToHexString(payLoadArray));
 			String jsonStr = Starwsn.messageResolve(topic, payLoadArray);
-			System.out.println(JsonFormatUtil.formatJson(jsonStr));
+			log.debug(JsonFormatUtil.formatJson(jsonStr));
 			ObjectMapper mapper = new ObjectMapper();
 			JsonNode jsonNode = mapper.readTree(jsonStr);
 

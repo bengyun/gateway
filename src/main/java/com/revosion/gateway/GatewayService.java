@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -19,11 +18,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 
-public class Test {
+public class GatewayService {
 
 	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
-		final Logger log = Logger.getLogger(Test.class);
+		final Logger log = Logger.getLogger(GatewayService.class);
 		final Config aMqttConfig = new Config();
 
 		// 构建MQTT连接
@@ -68,7 +67,6 @@ public class Test {
 					log.info(response.getStatusLine());
 					response.close();
 					
-					//ms.publish("channels/" + aMqttConfig.BengyunChannelId() + "/messages", message);
 				}
 			} catch (JsonProcessingException e) {
 				log.error(e);

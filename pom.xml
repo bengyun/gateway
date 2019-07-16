@@ -110,7 +110,7 @@
 					<manifest>
 						<addClasspath>true</addClasspath>
 						<classpathPrefix>lib/</classpathPrefix>
-						<mainClass>com.revosion.gateway.Test</mainClass>
+						<mainClass>com.revosion.gateway.GatewayService</mainClass>
 					</manifest>
 					</archive>
 				</configuration>
@@ -135,7 +135,7 @@
 				<executions>
 				  <execution>
 					<id>make-assembly</id>
-                    <!-- bind to the packaging phase -->
+          <!-- bind to the packaging phase -->
 					<phase>package</phase> 
 					<goals>
 						<goal>single</goal>
@@ -143,6 +143,18 @@
 				  </execution>
 				</executions>
 			</plugin>
+			<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
 		</plugins>
 	</build>
+	<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 </project>
