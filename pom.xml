@@ -128,7 +128,7 @@
 					<!-- MainClass in mainfest make a executable jar -->
 					<archive>
 					  <manifest>
-						<mainClass>com.revosion.gateway.Test</mainClass>
+						<mainClass>com.revosion.gateway.GatewayService</mainClass>
 					  </manifest>
 					</archive>
 				</configuration>

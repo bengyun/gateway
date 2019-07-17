@@ -2,7 +2,7 @@ mqtt_starwsn_host: tcp://120.77.155.222:1883
 mqtt_starwsn_username: admin
 mqtt_starwsn_password: password
 
-mqtt_bengyun_host: http://http-adapter:8185/http/channels/
+mqtt_bengyun_host: http-adapter/http/channels/
 mqtt_bengyun_channel_id: e5b6fdf5-396a-45a4-9c2a-48aa0503e55b
 
 mqtt_starwsn_topics:
