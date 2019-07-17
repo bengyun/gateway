@@ -27,7 +27,7 @@ public class JsonToSenML {
 
                 }
                 list.add(senML);
-                list.get(0).setBaseName("starwsn_");
+                list.get(0).setBaseName("");
                 list.get(0).setBaseUnit("cm");
             }
         }
