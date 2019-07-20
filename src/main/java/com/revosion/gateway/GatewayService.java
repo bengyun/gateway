@@ -27,15 +27,8 @@ public class GatewayService {
 
 		// 构建MQTT连接
 		MqttServices mqttService = new MqttServices(aMqttConfig.StarwsnHost(), aMqttConfig.StarwsnUserName(),
-				aMqttConfig.StarwsnPassWord());
-		boolean cb = mqttService.connect(true);
-		if (cb) {
-			// 订阅设备
-			for (LinkedHashMap topic : aMqttConfig.StarwsnTopics()) {
-				System.out.println((String) topic.get("topic"));
-				mqttService.subScription((String) topic.get("topic"), (int) topic.get("qos"));
-			}
-		}
+				aMqttConfig.StarwsnPassWord(), aMqttConfig.StarwsnTopics());
+		mqttService.connect(true);
 
 		//MqttServices ms = new MqttServices(aMqttConfig.BengyunHost(), "d", "d");
 		//boolean cb1 = ms.connect(true);

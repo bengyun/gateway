@@ -1,5 +1,6 @@
 package com.revosion.gateway;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -29,17 +30,21 @@ public class MqttServices {
 	private static String clientId = "starwsn-mqtt-test-295224018"; // 客户端ID
 	private static MqttClient client; // 客户端对象
 	private BlockingQueue<JsonNode> queue = new LinkedBlockingQueue<JsonNode>();
+	@SuppressWarnings("rawtypes")
+	private List<LinkedHashMap> topics_to_sub;
 
-	public MqttServices(String host, String userName, String passWord) {
+	public MqttServices(String host, String userName, String passWord, List<LinkedHashMap> topics_to_sub) {
 		this.host = host;
 		this.userName = userName;
 		this.passWord = passWord;
+		this.topics_to_sub = topics_to_sub;
 	}
 
 	/**
 	 * 连接服务器
 	 * @param cleanSession 是否清除session
 	 */
+	@SuppressWarnings("rawtypes")
 	public boolean connect(boolean cleanSession) {
 		try {
 			client = new MqttClient(host, clientId, new MemoryPersistence());
@@ -54,6 +59,10 @@ public class MqttServices {
 			client.setCallback(new MessageCallback(this));
 			client.connect(options);
 			logger.info("mqtt服务连接成功！！！");
+			// 订阅设备
+			for (LinkedHashMap topic : this.topics_to_sub) {
+				this.subScription((String) topic.get("topic"), (int) topic.get("qos"));
+			}
 			return true;
 		} catch (Exception e) {
 			logger.info("mqtt服务连接失败！！！");
